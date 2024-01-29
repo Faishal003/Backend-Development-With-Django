@@ -23,7 +23,16 @@
     <h3>{{heading_1}}</h3>
     <form action="" method="POST">
         {{ test_form.as_p }}
+        {% csrf_token %}
+        <input type="submit" name="submit" value="Submit">
     </form>
+    <hr>
+    {% if form_submitted %}
+        <h3>Form Submitted</h3>
+        <p>Username: {{ user_name }}</p>
+        <p>Email: {{ user_email }}</p>
+        <p>Date of Birth: {{ user_dob }}</p>
+    {% endif %}
 
 </body>
 </html>
