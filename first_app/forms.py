@@ -1,6 +1,10 @@
 from django import forms
 
 class user_form(forms.Form):
-    user_name = forms.CharField(label='User Name', max_length=100, widget=forms.TextInput(attrs={'placeholder':'Enter your name', 'style':'width:300px'}))
-    user_dob = forms.DateField(label = 'Date of Birth', widget=forms.TextInput(attrs={'type':'date'}))
-    user_email = forms.EmailField(label='Email', max_length=100)
+    boolean_field = forms.BooleanField(required=False)
+    char_field = forms.CharField(max_length=15, min_length=5)
+    # choice_field = forms.ChoiceField(choices=[('','SELECT OPTION'),(1, 'one'), (2, 'two'), (3, 'three')])
+    #convert the choice field into a radio button
+    # choice_field = forms.ChoiceField(choices=[('a', 'a'), ('b', 'b'), ('c', 'c')], widget=forms.RadioSelect)
+    #convert the choice field into a multiple choice field
+    choice_field = forms.MultipleChoiceField(choices=[(1, 'one'), (2, 'two'), (3, 'three')], required= False, widget=forms.CheckboxSelectMultiple)

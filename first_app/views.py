@@ -17,12 +17,8 @@ def from_view(request):
         new_form = forms.user_form(request.POST)
 
         if new_form.is_valid():
-            user_name = new_form.cleaned_data['user_name']
-            user_dob = new_form.cleaned_data['user_dob']
-            user_email = new_form.cleaned_data['user_email']
-
-            diction.update({'user_name':user_name})
-            diction.update({'user_dob':user_dob})
-            diction.update({'user_email':user_email})
+            diction.update({'boolean_field': new_form.cleaned_data['boolean_field']})
+            diction.update({'char_field': new_form.cleaned_data['char_field']})
+            diction.update({'choice_field': new_form.cleaned_data['choice_field']})
             diction.update({'form_submitted': 'yes'})
     return render(request, 'first_app/form.html', context=diction)
