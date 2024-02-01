@@ -15,10 +15,9 @@ def from_view(request):
 
     if request.method == 'POST':
         new_form = forms.user_form(request.POST)
+        diction.update({'test_form':new_form})
 
         if new_form.is_valid():
-            diction.update({'boolean_field': new_form.cleaned_data['boolean_field']})
-            diction.update({'char_field': new_form.cleaned_data['char_field']})
-            diction.update({'choice_field': new_form.cleaned_data['choice_field']})
+            diction.update({'number_filed': 'Fields are matched.'})
             diction.update({'form_submitted': 'yes'})
     return render(request, 'first_app/form.html', context=diction)

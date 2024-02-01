@@ -1,10 +1,19 @@
 from django import forms
+from django.core import validators
+
+# def even_validator(value):
+#     if value % 2 != 0:
+#         raise forms.ValidationError('Number is not even')
 
 class user_form(forms.Form):
-    boolean_field = forms.BooleanField(required=False)
-    char_field = forms.CharField(max_length=15, min_length=5)
-    # choice_field = forms.ChoiceField(choices=[('','SELECT OPTION'),(1, 'one'), (2, 'two'), (3, 'three')])
-    #convert the choice field into a radio button
-    # choice_field = forms.ChoiceField(choices=[('a', 'a'), ('b', 'b'), ('c', 'c')], widget=forms.RadioSelect)
-    #convert the choice field into a multiple choice field
-    choice_field = forms.MultipleChoiceField(choices=[(1, 'one'), (2, 'two'), (3, 'three')], required= False, widget=forms.CheckboxSelectMultiple)
+    # number_filed = forms.IntegerField(validators=[even_validator])
+    user_email = forms.EmailField()
+    user_vmail = forms.EmailField()
+
+    def clean(self):
+        all_clean_data = super().clean()
+        user_email = all_clean_data['user_email']
+        user_vmail = all_clean_data['user_vmail']
+
+        if user_email != user_vmail:
+            raise forms.ValidationError('Make sure emails match')
