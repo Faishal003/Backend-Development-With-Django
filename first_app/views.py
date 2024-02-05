@@ -5,7 +5,7 @@ from first_app import forms
 # Create your views here.
 
 def index(request):
-    diction = {'text': Album.objects.get(pk=1)}
+    diction = {'text': "Sample text"}
     return render(request, 'first_app/index.html', context=diction)
 
 def from_view(request):

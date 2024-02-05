@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 {% extends "first_app/base.html" %}
+{% load my_filters %}
 {% block body_block %}
     <div class="container">
         <h1>Home</h1>
         <p>This is the home page</p>
-        hello, {{text.release_date|date:"D, d M Y"}}
+        hello, {{text|custom_filters}}
     </div>
 {% endblock %}
