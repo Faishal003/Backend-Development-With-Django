@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
     <meta charset="UTF-8">
+      <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{ title }}</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -16,12 +23,17 @@
             <a class="nav-link" href="{% url 'first_app:index' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'first_app:form' %}">Form</a>
+            <a class="nav-link" href="{% url 'first_app:musician_form' %}">Add Musician</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'first_app:album_form' %}">Add Album</a>
           </li>
         </ul>
       </nav> 
 
-    {% block body_block %}
-    {% endblock %}
+    <div class="container">
+        {% block body_block %}
+        {% endblock %}
+    </div>
 </body>
 </html>
