@@ -1,4 +1,14 @@
 {%extends 'first_app/base.html' %}
 {% block body_block %}
 <h1>Album List</h1>
+<h4>Artist Name: {{artist_info.first_name}} {{artist_info.last_name}}</h4>
+<h4>Instrument: {{artist_info.instrument}}</h4>
+<ul>
+    {% if album_list %}
+    {% for album in album_list %}
+        <li>{{album.album_list}}</li>
+    {% endfor %}
+    {% else %}
+    <h3>No Album is not available in that list</h3>
+    {% endif %}
 {% endblock %}

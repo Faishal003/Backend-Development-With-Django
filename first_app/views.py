@@ -9,8 +9,10 @@ def index(request):
     diction = {'title': "Home Page", 'musicain_list': musicain_list}
     return render(request, 'first_app/index.html', context=diction)
 
-def album_list(request):
-    diction = {'title': "Album List"}
+def album_list(request, artist_id):
+    artist_info = Musician.objects.get(pk=artist_id)
+    album_list = Album.objects.filter(artist=artist_id).order_by('name')
+    diction = {'title': "Album List", 'artist_info': artist_info, 'album_list': album_list}
     return render(request, 'first_app/album_list.html', context=diction)
 
 def musician_form(request):
