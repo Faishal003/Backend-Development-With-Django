@@ -1,14 +1,29 @@
 {%extends 'first_app/base.html' %}
 {% block body_block %}
-<h1>Album List</h1>
+<h1>Artist List</h1>
 <h4>Artist Name: {{artist_info.first_name}} {{artist_info.last_name}}</h4>
 <h4>Instrument: {{artist_info.instrument}}</h4>
-<ul>
-    {% if album_list %}
-    {% for album in album_list %}
-        <li>{{album.album_list}}</li>
-    {% endfor %}
+<h1>Album List</h1>
+<h2>Artist Rating: {{artist_rating.num_stars__avg}}</h2>
+{% if album_list %}
+<table class="table table-bordered">
+    <tr>
+        <th>Album Name</th>
+        <th>Release Date</th>
+        <th>Rating</th>
+        <th>Artist Rating</th>
+    </tr>
+
+    {%for album in album_list%}
+    <tr>
+        <td>{{album.name}}</td>
+        <td>{{album.release_date|date:"M d, Y"}}</td>
+        <td>{{album.num_stars}}</td>
+        <td>{{artist_rating.num_stars__avg}}</td>
+    </tr>
+    {%endfor%}
     {% else %}
-    <h3>No Album is not available in that list</h3>
+    <h4>No Album list is present in that artist</h4>
     {% endif %}
+</table>
 {% endblock %}
