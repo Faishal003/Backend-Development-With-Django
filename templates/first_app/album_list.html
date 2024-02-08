@@ -6,7 +6,7 @@
 <h1>Album List</h1>
 <h2>Artist Rating: {{artist_rating.num_stars__avg}}</h2>
 <a href="{%url 'first_app:edit_artist' artist_id=artist_info.id %}" class="btn btn-primary btn-sm">Add</a>
-<br><br> 
+<br><br>  
 {% if album_list %}
 <table class="table table-bordered">
     <tr>
@@ -18,7 +18,7 @@
 
     {%for album in album_list%}
     <tr>
-        <td>{{album.name}}</td>
+        <td><a href="{%url 'first_app:edit_album' album_id=album.id %}">{{album.name}}</a></td>
         <td>{{album.release_date|date:"M d, Y"}}</td>
         <td>{{album.num_stars}}</td>
         <td>{{artist_rating.num_stars__avg}}</td>
