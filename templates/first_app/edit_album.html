@@ -10,6 +10,8 @@
 <form method="POST">
     {{edit_form.as_p}}
     {% csrf_token %}
-    <input type="submit" name="submit" class="btn btn-primary" value="Update">
+    <input type="submit" name="submit" class="btn btn-primary btn-sm" value="Update">
 </form>
+<br>
+<a href="{%url 'first_app:delete_album' album_id=album_id %}" class="btn btn-danger btn-sm" onclick="return confirm('You want to delete?')">Delete</a>
 {% endblock %}

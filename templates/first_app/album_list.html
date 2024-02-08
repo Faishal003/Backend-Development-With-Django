@@ -28,4 +28,6 @@
     <h4>No Album list is present in that artist</h4>
     {% endif %}
 </table>
+<br>
+<a href="{%url 'first_app:delete_musician' artist_id=artist_info.id %}" class="btn btn-danger btn-sm" onclick="return confirm('You want to delete?')">Delete</a>
 {% endblock %}
