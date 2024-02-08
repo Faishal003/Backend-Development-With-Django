@@ -1,0 +1,12 @@
+{%extends 'first_app/base.html' %}
+{% block body_block %}
+<h1>Edit Artist</h1>
+
+<form method="POST">
+    {{edit_form.as_p}}
+    {% csrf_token %}
+    <input type="submit" name="submit" class="btn btn-primary" value="Update">
+</form>
+
+
+{% endblock %}

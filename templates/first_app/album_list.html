@@ -5,11 +5,13 @@
 <h4>Instrument: {{artist_info.instrument}}</h4>
 <h1>Album List</h1>
 <h2>Artist Rating: {{artist_rating.num_stars__avg}}</h2>
+<a href="{%url 'first_app:edit_artist' artist_id=artist_info.id %}" class="btn btn-primary btn-sm">Add</a>
+<br><br> 
 {% if album_list %}
 <table class="table table-bordered">
     <tr>
         <th>Album Name</th>
-        <th>Release Date</th>
+        <th>Release Date</th> 
         <th>Rating</th>
         <th>Artist Rating</th>
     </tr>
