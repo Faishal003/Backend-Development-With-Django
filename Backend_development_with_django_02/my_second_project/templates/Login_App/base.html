@@ -22,10 +22,13 @@
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'Login_App:index' %}">Home</a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'Login_App:register' %}">Register</a>
+          </li>
         </ul>
       </nav> 
 
-    <div class="container">
+    <div class="container" style="padding-top: 20px;">
         {% block body_block %}
         {% endblock %}
     </div>

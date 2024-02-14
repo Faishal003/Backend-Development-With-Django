@@ -5,4 +5,5 @@ app_name = 'Login_App'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('register/', views.register, name='register'),
 ]
