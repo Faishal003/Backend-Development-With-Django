@@ -57,4 +57,9 @@ def user_login(request):
         else:
             return HttpResponse('Invalid login details supplied')
     else:
-        return render(request, 'Login_App/login.html', context={})
+        return HttpResponseRedirect(reverse('Login_App:login'))
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('Login_App:index'))
