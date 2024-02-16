@@ -4,6 +4,7 @@
     <h3><p>You are logged in as a {{ user_basic_info.username }}.</p></h3>
     <h3><p>Your email is: {{ user_basic_info.email }}</p></h3>
     <h3><p>Your facebook_id is: <a href="{{ user_more_info.facebook_id }}">Facebook Id</a></p></h3>
+    <img src="/media/{{ user_more_info.profile_pic }}" width="100px">
 {% else %}
     <p>You are not logged in</p>
     <a href="{% url 'Login_App:login' %}">Log in</a>

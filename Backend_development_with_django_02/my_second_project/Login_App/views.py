@@ -16,9 +16,8 @@ def index(request):
     if request.user.is_authenticated:
         current_user = request.user
         user_id = current_user.id
-        print(user_id)
         try:
-            user_basic_info = User.objects.get(pk=user_id) 
+            user_basic_info = User.objects.get(pk=user_id)
             user_more_info = UserInfo.objects.get(user__pk=user_id)
             dict = {'user_basic_info': user_basic_info, 'user_more_info': user_more_info}
         except ObjectDoesNotExist:
