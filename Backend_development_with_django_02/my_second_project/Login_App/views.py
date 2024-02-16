@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from Login_App.forms import UserForm, UserInfoForm
+from django.contrib.auth.models import User
+from Login_App.models import UserInfo
 
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -7,9 +9,23 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
 # Create your views here.
+from django.core.exceptions import ObjectDoesNotExist
+
 def index(request):
     dict = {}
+    if request.user.is_authenticated:
+        current_user = request.user
+        user_id = current_user.id
+        print(user_id)
+        try:
+            user_basic_info = User.objects.get(pk=user_id) 
+            user_more_info = UserInfo.objects.get(user__pk=user_id)
+            dict = {'user_basic_info': user_basic_info, 'user_more_info': user_more_info}
+        except ObjectDoesNotExist:
+            # Handle the case where UserInfo does not exist for the user
+            dict['message'] = "Please complete your profile information."
     return render(request, 'Login_App/index.html', context=dict)
+
 
 def register(request):
 
