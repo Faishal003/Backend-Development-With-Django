@@ -5,4 +5,5 @@ app_name = 'first_app'
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
+    path('musician_details/<pk>/', views.MusicianDetail.as_view(), name='musician_details'),
 ]

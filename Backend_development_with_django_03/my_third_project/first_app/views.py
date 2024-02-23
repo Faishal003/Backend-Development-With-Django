@@ -15,3 +15,8 @@ class IndexView(ListView):
     template_name = 'first_app/index.html'
     model = Musician
 
+class MusicianDetail(DetailView):
+    context_object_name = 'musician'
+    model = Musician
+    template_name = 'first_app/musician_details.html'
+

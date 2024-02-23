@@ -2,7 +2,7 @@
 {% block body_block %}
 <ul>
     {% for musician in musician_list %}
-    <li><h1>{{ musician.first_name }} {{ musician.last_name }}</h1></li>
+    <li><h1><a href="{% url 'first_app:musician_details' pk=musician.pk %}">{{ musician.first_name }} {{ musician.last_name }}</a></h1></li>
     {% endfor %}
 </ul>
  
