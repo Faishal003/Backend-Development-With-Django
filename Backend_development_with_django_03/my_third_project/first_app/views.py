@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import View, TemplateView, ListView, DetailView
+from django.views.generic import View, TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Musician, Album
 
 # Create your views here.
@@ -19,4 +19,9 @@ class MusicianDetail(DetailView):
     context_object_name = 'musician'
     model = Musician
     template_name = 'first_app/musician_details.html'
+
+class AddMusician(CreateView):
+    model = Musician
+    fields = ('first_name', 'last_name', 'instrument')
+    template_name = 'first_app/musician_form.html'
 
