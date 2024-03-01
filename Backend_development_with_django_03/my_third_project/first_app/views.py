@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import View, TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Musician, Album
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -29,4 +30,10 @@ class UpdateMusician(UpdateView):
     model = Musician
     fields = ('first_name', 'instrument')
     template_name = 'first_app/musician_form.html'
+
+class DeleteMusician(DeleteView):
+    context_object_name = 'musician'
+    model = Musician
+    success_url = reverse_lazy('first_app:index')
+    template_name = 'first_app/delete_musician.html'
 

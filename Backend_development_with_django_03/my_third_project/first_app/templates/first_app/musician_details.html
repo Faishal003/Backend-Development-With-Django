@@ -11,4 +11,5 @@
 {% endfor %}  
 </ul>
  <a href="{% url 'first_app:update_musician' pk=musician.pk %}" class="btn btn-warning btn-sm">Update</a>
+    <a href="{% url 'first_app:delete_musician' pk=musician.pk %}" class="btn btn-danger btn-sm">Delete</a>
 {% endblock %}
