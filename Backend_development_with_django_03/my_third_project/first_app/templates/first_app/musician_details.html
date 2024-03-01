@@ -1,6 +1,6 @@
 {% extends 'first_app/base.html'%}
 {% block body_block %}
-<h3>musician_details:</h3>
+<h1>Musician_details:</h1>
 <p>First Name: {{ musician.first_name }}</p>
 <p>Last Name: {{ musician.last_name }}</p>
 <p>Instrument: {{ musician.instrument }}</p>
@@ -10,5 +10,5 @@
     <p>{{ album.name }}</p>
 {% endfor %}  
 </ul>
- 
+ <a href="{% url 'first_app:update_musician' pk=musician.pk %}" class="btn btn-warning btn-sm">Update</a>
 {% endblock %}

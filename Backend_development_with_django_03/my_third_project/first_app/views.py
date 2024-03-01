@@ -25,3 +25,8 @@ class AddMusician(CreateView):
     fields = ('first_name', 'last_name', 'instrument')
     template_name = 'first_app/musician_form.html'
 
+class UpdateMusician(UpdateView):
+    model = Musician
+    fields = ('first_name', 'instrument')
+    template_name = 'first_app/musician_form.html'
+
