@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Example</title>
+</head>
+<body>
+    <h3>Github Api</h3>
+    <form method="POST">
+        <input type="text" name="username" value="" required>
+        <input type="submit" name="" value="Get Github Info">
+        {% csrf_token %}
+    </form>
+
+    {% if user %}
+    <p><b>Username:</b> {{user.login}}</p>
+    <p><b>Profile Url:</b> {{user.html_url}}</p>
+    <p><b>Repos:</b> {{user.public_repos}}</p>
+    {% endif %}
+</body>
+</html>
