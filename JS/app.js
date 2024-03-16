@@ -1,22 +1,17 @@
-//conditional statement
-console.log("Before my if statement");
-let age = 20;
-if (age >= 21) {
-    console.log("You may enter...");
-}
-else {
-    console.log("You may not enter...");
-}
-console.log("After my if statement");
+//truthly or falsy
 
-//practice
-let color = "red";
-if (color == "red") {
-    console.log("Stop the car");
+let string = "faishal ahmed";
+
+if (string) {
+    console.log("string is not empty"); //return true value because string is not empty
+} else {
+    console.log("string is empty");
 }
-if (color == "yellow") {
-    console.log("Slow down");
-}
-if (color == "green") {
-    console.log("Go");
+
+let number = 0;
+
+if (number) {
+    console.log("number is not empty");
+} else {
+    console.log("number is empty"); //return false value because 0 is a false value
 }
