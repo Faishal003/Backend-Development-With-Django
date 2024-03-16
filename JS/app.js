@@ -1,17 +1,30 @@
-//truthly or falsy
+//practice switch statement
 
-let string = "faishal ahmed";
+let day = 50;
 
-if (string) {
-    console.log("string is not empty"); //return true value because string is not empty
-} else {
-    console.log("string is empty");
-}
-
-let number = 0;
-
-if (number) {
-    console.log("number is not empty");
-} else {
-    console.log("number is empty"); //return false value because 0 is a false value
+switch (day) {
+    case 1:
+        console.log('Monday');
+        break;
+    case 2:
+        console.log('Tuesday');
+        break;
+    case 3:
+        console.log('Wednesday');
+        break;
+    case 4:
+        console.log('Thursday');
+        break;
+    case 5:
+        console.log('Friday');
+        break;
+    case 6:
+        console.log('Saturday');
+        break;
+    case 7:
+        console.log('Sunday');
+        break;
+    default:
+        console.log('Invalid day');
+        break;
 }
