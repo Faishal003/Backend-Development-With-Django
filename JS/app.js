@@ -1,6 +1,22 @@
-let pencilePrice = 10;
-let penPrice = 20;
+//conditional statement
+console.log("Before my if statement");
+let age = 20;
+if (age >= 21) {
+    console.log("You may enter...");
+}
+else {
+    console.log("You may not enter...");
+}
+console.log("After my if statement");
 
-// console.log("Total price is", pencilePrice + penPrice, "Taka");
-let output = `Total price is ${pencilePrice + penPrice} Taka`;
-console.log(output);
+//practice
+let color = "red";
+if (color == "red") {
+    console.log("Stop the car");
+}
+if (color == "yellow") {
+    console.log("Slow down");
+}
+if (color == "green") {
+    console.log("Go");
+}
