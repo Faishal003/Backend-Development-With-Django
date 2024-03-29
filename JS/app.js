@@ -1,23 +1,38 @@
-//guessing game
+function greetings() {
+    console.log(`hello! welcome here.`)
+}
 
-const max = prompt("Tell the guessing game range");
+function userName() {
+    console.log("Faishal Ahmed Emon");
+    greetings();
+}
 
-const random = Math.floor(Math.random() * max) + 1;
+userName();
 
-let guess = prompt(`guess any number between 1 to ${max}`);
+function rollDice() {
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
+    console.log(randomNumber);
+}
 
-while (true) {
-    if (guess == 'exit') {
-        console.log("You just logged out of the game");
-        break;
-    }
+rollDice()
 
-    if (guess == random) {
-        console.log("guess matched", random);
-        break;
-    } else if (guess < random) {
-        guess = prompt("hint: Your number is too small. Please try again");
-    } else {
-        guess = prompt("hint: Your number is too large. Please try again.")
+function printName(name, age) {
+    console.log(`${name}'s age is ${age}.`);
+}
+
+printName("emon", 24);
+
+function avgThree(a, b, c) {
+    console.log((a + b + c) / 3);
+}
+
+avgThree(1, 2, 3);
+
+//print table using function
+
+function tableNumber(n) {
+    for (i = n; i <= n * 10; i += n) {
+        console.log(i);
     }
 }
+tableNumber(3);
