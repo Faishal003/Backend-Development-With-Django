@@ -1,38 +1,48 @@
-function greetings() {
-    console.log(`hello! welcome here.`)
-}
+//higher order function
 
-function userName() {
-    console.log("Faishal Ahmed Emon");
-    greetings();
-}
-
-userName();
-
-function rollDice() {
-    let randomNumber = Math.floor(Math.random() * 6) + 1;
-    console.log(randomNumber);
-}
-
-rollDice()
-
-function printName(name, age) {
-    console.log(`${name}'s age is ${age}.`);
-}
-
-printName("emon", 24);
-
-function avgThree(a, b, c) {
-    console.log((a + b + c) / 3);
-}
-
-avgThree(1, 2, 3);
-
-//print table using function
-
-function tableNumber(n) {
-    for (i = n; i <= n * 10; i += n) {
-        console.log(i);
+function multipleGreet(func, count) {//higher order function
+    for (i = 1; i <= count; i++) {
+        func();
     }
 }
-tableNumber(3);
+
+let greetings = function () {
+    console.log("hi, welcome here!!");
+    console.log("Hello")
+}
+
+multipleGreet(greetings, 2);
+
+
+
+//higher order function (return)
+
+// function odd(n) {
+//     console.log(!(n % 2 == 0));
+// }
+
+// function even(n) {
+//     console.log(n % 2 == 0);
+// }
+
+function evenOrOdd(request) {
+    if (request == 'even') {
+        let even = function even(n) {
+            console.log(n % 2 == 0);
+        }
+
+        return even;
+
+    } else if (request == 'odd') {
+        function odd(n) {
+            console.log(!(n % 2 == 0));
+        }
+
+        return odd;
+
+    } else {
+        console.log("please enter even or odd as an input");
+    }
+}
+
+let request = 'odd';
