@@ -1,48 +1,34 @@
-//higher order function
+//method
 
-function multipleGreet(func, count) {//higher order function
-    for (i = 1; i <= count; i++) {
-        func();
-    }
-}
+// const calculator = {
+//     num: 55,
 
-let greetings = function () {
-    console.log("hi, welcome here!!");
-    console.log("Hello")
-}
+//     add: function(a,b){
+//         return a + b;
+//     },
 
-multipleGreet(greetings, 2);
+//     sub: function(a,b){
+//         return a - b;
+//     },
 
-
-
-//higher order function (return)
-
-// function odd(n) {
-//     console.log(!(n % 2 == 0));
+//     mul: function(a,b){
+//         return a * b;
+//     }
 // }
 
-// function even(n) {
-//     console.log(n % 2 == 0);
-// }
 
-function evenOrOdd(request) {
-    if (request == 'even') {
-        let even = function even(n) {
-            console.log(n % 2 == 0);
-        }
+//shor way to be defined
 
-        return even;
+const calculator = {
+    add(a,b){
+        return a + b;
+    },
 
-    } else if (request == 'odd') {
-        function odd(n) {
-            console.log(!(n % 2 == 0));
-        }
+    sub(a,b){
+        return a - b;
+    },
 
-        return odd;
-
-    } else {
-        console.log("please enter even or odd as an input");
+    mul(a,b){
+        return a * b;
     }
 }
-
-let request = 'odd';
