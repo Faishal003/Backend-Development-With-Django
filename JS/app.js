@@ -1,6 +1,17 @@
-//implicit return of arrow function
+//set timeout
 
-const cal = (a, b) => (a + b); //implicit then use first bracket
-const power = (a, b) => a ** b;
+console.log("practice of set timeout function");
 
-//normal arrow function contain second bracket
+setTimeout(() => {
+    console.log("faishal ahmed");
+}, 4000);
+
+console.log('welcome to');
+
+//set Interval
+
+let id = setInterval(() => {
+    console.log("hello");
+},2000);
+
+console.log(id);
