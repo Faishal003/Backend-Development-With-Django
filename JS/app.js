@@ -56,3 +56,41 @@ let max = numbers.reduce((max, el)=>{
         return el;
     }
 })
+
+
+//spread with Array literals
+
+let arr = [1,2,3,4,5,6];
+
+let newarr = [...arr];
+
+console.log(newarr)
+
+
+let char = [...'faishal ahmed emon'];
+console.log(char)
+
+let even = [2,4,6,8];
+let odd = [1,3,5,7];
+
+let merge = [...even, ...odd];
+
+console.log (merge)
+
+
+//spread with object literals
+
+const students = {
+    name: "faishal ahmed emon",
+    email: 'emon@gmail.com',
+}
+
+let copy_students = {...students, country: "Bangladesh"}
+console.log(copy_students)
+
+let arrr = [2,3,4,5,6,7];
+let obj1 = {...arrr}
+console.log(obj1)
+
+let charter = {..."hello"}
+console.log(charter)
