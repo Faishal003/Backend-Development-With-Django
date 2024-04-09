@@ -1,23 +1,28 @@
-//rest method (reverse of spread method)\
-function sum(...args){
-    return args.reduce((sum, el)=>sum+el);
+//destructuring method
+
+let names = ['emon', 'ahmed', 'mahmudul', 'faishal'];
+
+// let winner = names[0];
+// let runnerup = names[1];
+// let secondRunnerUp = names[2];
+
+//we can reduce those terms
+
+// let[winner, runnerup, secondRunnerUp] = names;
+
+//if array length is high ans store all of that with winner and runnerup we can use mix up like use rest method and destructuring
+let [winner, runnerup, ...others] = names;
+
+//object literals for destructuring
+
+const student = {
+    name: 'fasihal ahmed emon',
+    age: 24,
+    education: 'B.Sc in Engineering',
+    subject: 'IRE',
 }
 
-function min(...args){
-    return args.reduce((min, el)=>{
-        if (min > el){
-            return el;
-        }else{
-            return min;
-        }
-    })
-}
+let {education, subject, ...other} = student; //rest of the key value should stored in ...other variable
 
-//rest method (reverse of spread method)\
-let sums = ((...args)=>{
-    let count = 0;
-    for(i=0; i < args.length; i++){
-        count += args[i]; 
-    }
-    return count;
-})
+//we can also give a variable on that
+let{name: user, age: dateOfBirth, place = 'Dhaka', ...othersall} = student;
