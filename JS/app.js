@@ -33,3 +33,8 @@ body.insertAdjacentElement("beforebegin", btn);
 body.insertAdjacentElement("afterbegin",btn);
 body.insertAdjacentElement("beforeend",btn);
 body.insertAdjacentElement("afterend",btn);
+
+
+//to remove use 
+body.remove()
+body.removeChild()
