@@ -36,13 +36,7 @@
     background-color: antiquewhite;
 } */
 
-.red {
-    color: red;
-}
-.blue {
-    color: blue;
-}
-.div {
-    border: 1px solid green;
-    background-color: pink;
+.btnStyle {
+    background-color: blue;
+    color: white;
 }

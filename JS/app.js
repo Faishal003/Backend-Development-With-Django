@@ -1,27 +1,30 @@
-let redPara = document.createElement('p');
-redPara.innerText = "Hey, I'm red pragraph.";
-document.querySelector('body').append(redPara);
+let input = document.createElement('input');
+let button = document.createElement('button');
 
-redPara.classList.add("red");
+button.innerText = 'click me';
 
-let bluePara = document.createElement('h3');
-bluePara.innerText = "Hey, I'm blue pragraph.";
-document.querySelector('body').append(bluePara);
+document.querySelector('body').append(input);
+document.querySelector('body').append(button);
 
-bluePara.classList.add("blue");
+//q2
+button.setAttribute('id', 'btn');
+input.setAttribute('placeholder','username');
 
-let div = document.createElement('div');
-div.classList.add('div')
+//access the btn using query selector
+let btn = document.querySelector('#btn');
+btn.classList.add('btnStyle')
 
+//q3 
+//create an h1 element
 let h1 = document.createElement('h1');
-h1.innerText = "I'm in div.";
+h1.innerHTML = '<u> DOM practice </u>';
+document.querySelector('body').append(h1);
 
-div.append(h1)
+//q4
+//create a p tag on the page
+let para = document.createElement('p');
+para.innerHTML = 'Apna College <b>Delta</b> Practice';
+document.querySelector('body').append(para);
 
-let para2 = document.createElement('p');
-para2.innerText = "I'm para 2";
-
-div.append(para2)
 
 
-document.querySelector('body').append(div)
