@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial;
 }
 
@@ -13,7 +13,7 @@ body {
 
 .box {
     border: 0.25px solid black;
-    /* background-color: lightgray; */
+    background-color: lightgray;
     width: 200px;
     padding: 1rem;
 }
@@ -34,4 +34,15 @@ body {
 
 #description {
     background-color: antiquewhite;
+} */
+
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+.div {
+    border: 1px solid green;
+    background-color: pink;
 }

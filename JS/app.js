@@ -1,40 +1,27 @@
-//adding elements on page
+let redPara = document.createElement('p');
+redPara.innerText = "Hey, I'm red pragraph.";
+document.querySelector('body').append(redPara);
 
-//let create an element is paragraph
-let newP = document.createElement('p');
+redPara.classList.add("red");
 
-//add some text inside the paragraph
-newP.intterText("This is a new paragraph section");
+let bluePara = document.createElement('h3');
+bluePara.innerText = "Hey, I'm blue pragraph.";
+document.querySelector('body').append(bluePara);
 
-//to check text add or not 
-newP //console command
+bluePara.classList.add("blue");
 
-//now add the paragraph in any section i choose body section to do that
-let body = document.querySelector('body');
+let div = document.createElement('div');
+div.classList.add('div')
 
-//appendChild is need to add newap in body
-body.appendChild(newP) //text is added on the last in body element
+let h1 = document.createElement('h1');
+h1.innerText = "I'm in div.";
 
+div.append(h1)
 
+let para2 = document.createElement('p');
+para2.innerText = "I'm para 2";
 
-//now i want to add some text in newP section
-newP.append("extra added text");
-
-//also create some button
-let btn = document.createElement('button');
-
-//insted of using appendChild we can use append also
-body.append(btn) // added to the last.
-body.prepend(btn) //added to the first.
-
-//to add any position using insertAdjacentElement(which position should i put, which element should i put)
-
-body.insertAdjacentElement("beforebegin", btn);
-body.insertAdjacentElement("afterbegin",btn);
-body.insertAdjacentElement("beforeend",btn);
-body.insertAdjacentElement("afterend",btn);
+div.append(para2)
 
 
-//to remove use 
-body.remove()
-body.removeChild()
+document.querySelector('body').append(div)
