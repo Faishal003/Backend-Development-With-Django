@@ -1,11 +1,12 @@
-let btns = document.querySelectorAll("button")
-console.dir(btns)
-// btn.onclick = greetings
+//addeventlistener
 
-function greetings(){
-    console.log("welcome here")
-}
+let p = document.querySelector("p")
+console.dir(p)
+p.addEventListener('click', function(){
+    p.style.color = "red"
+})
 
-for (btn of btns) {
-    btn.onclick = greetings
-}
+let div = document.querySelector('div')
+div.addEventListener("mouseenter", function(){
+    div.style.backgroundColor = "yellow"
+})
