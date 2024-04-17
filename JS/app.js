@@ -1,15 +1,7 @@
-let form = document.querySelector("form")
+let inp = document.querySelector("#text");
+let p = document.querySelector("p");
 
-form.addEventListener("submit", function(event){
-    event.preventDefault();
-    // let user = document.querySelector("#user");
-    // let pass = document.querySelector("#pass");
-
-    let user = this.elements[0];//form.elements[0] both are same
-    let pass = this.elements[1];
-
-    console.log(user.value);
-    console.log(pass.value);
-
-    alert(`hi, ${user.value}! your submitted pass is ${pass.value}`);
-})
+inp.addEventListener("input", function(){
+    console.log(inp.value);
+    p.innerText = inp.value;
+});
