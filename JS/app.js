@@ -1,43 +1,47 @@
-let btn = document.querySelector("button");
-let ul = document.querySelector('ul');
-let inp = document.querySelector('input');
+let gameSeq = [];
+let userSeq = [];
 
-inp.addEventListener('keydown',function(event){
-    if(event.code == "Enter"){
-        btn.click();
+let btnColor = ['pink','green','gray','purple'];
+
+let started = false;
+let level = 0;
+
+let h2 = document.querySelector('h2');
+
+document.addEventListener("keypress", function () {
+    if (started == false) {
+        console.log("game is started");
+        started = true;
     }
+
+    levelUP();
 })
 
-btn.addEventListener('click', function(){
+function btnFlash(btn){
+    btn.classList.add("flash");
+    setTimeout(function(){
+        btn.classList.remove("flash")
+    }, 250)
+}
 
-    let item = document.createElement('li');
-    let deleteBtn = document.createElement('button');
+function levelUP() {
+    level++;
+    h2.innerText = `Level: ${level}`
+    
+    //random btn choose
+    let randIdx = Math.floor(Math.random() * 4);
+    let btnIdx = btnColor[randIdx];
+    let randBtn = document.querySelector(`.${btnIdx}`)
+    btnFlash(randBtn);
+}
 
-    item.innerText = inp.value;
-    deleteBtn.innerText = "delete";
-    deleteBtn.classList.add("delete");
+function btnPress(){
+    //let btn = this;
+    console.log(this);
+}
 
-    ul.appendChild(item);
-    item.appendChild(deleteBtn);
-
-    inp.value = "";
-})
-
-ul.addEventListener('click', function(event){
-    // console.log(event.target.nodeName);
-    if(event.target.nodeName == 'BUTTON'){
-        let listItem = event.target.parentElement;
-        listItem.remove();
+let allBtns = document.querySelectorAll(".btn");
+    for (btn of allBtns){
+        btn.addEventListener("click", btnPress);
     }
-})
-
-//This should workd for existing list if add new value then it should not delete that value.
-// let delbtns = document.querySelectorAll('.delete');
-// for(delbtn of delbtns){
-//     delbtn.addEventListener('click', function(){
-//         let par = this.parentElement;
-//         console.log(par);
-//         par.remove();
-//     })
-// }
 
