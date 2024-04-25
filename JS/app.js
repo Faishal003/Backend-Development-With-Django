@@ -1,21 +1,30 @@
-//callback nesting--callback hell
-
-h1 = document.querySelector("h1");
-
-function changeColor(color, delay, nextColorChange){
-    setTimeout(()=>{
-        h1.style.color = color;
-        if(nextColorChange) nextColorChange();
-    }, delay)
+function savetoDB(data){
+    return new Promise((resolve, reject)=>{
+        let internetSpeed = Math.floor(Math.random() * 10) + 1;
+        if(internetSpeed > 4){
+            resolve("Success: data saved successfully");
+        }else{
+            reject("Failure: Bad Network Connection");
+        }
+    });
 }
 
+// let request = savetoDB("faishal");
+// request.then(()=>{
+//     console.log("Promise was resolved.");
+//     console.log(request);
+// })
+// .catch(()=>{
+//     console.log("Promise was rejected.");
+//     console.log(request);
+// })
 
-changeColor("red",1000,()=>{
-    changeColor("green", 1000, ()=>{
-        changeColor("blue", 1000, ()=>{
-            changeColor("orange", 1000, ()=>{
-                changeColor("pink", 1000);
-            })
-        })
-    })
+//same but more compact way should be
+
+savetoDB("faishal")
+.then(()=>{
+    console.log("Promise was resolved.");
+})
+.catch(()=>{
+    console.log("Promise was rejected.");
 })
