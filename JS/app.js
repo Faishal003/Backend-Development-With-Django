@@ -23,7 +23,15 @@ function savetoDB(data){
 
 savetoDB("faishal")
 .then(()=>{
-    console.log("Promise was resolved.");
+    console.log("first data saved");
+    return savetoDB("ahmed")
+})
+.then(()=>{
+    console.log("second data saved");
+    return savetoDB("emon");
+})
+.then(()=>{
+    console.log("third data saved.");
 })
 .catch(()=>{
     console.log("Promise was rejected.");
