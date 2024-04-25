@@ -33,3 +33,7 @@ body {
 .flash {
     background-color: white;
 }
+
+.flash_black {
+    background-color: black;
+}
