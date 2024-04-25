@@ -22,17 +22,21 @@ function savetoDB(data){
 //same but more compact way should be
 
 savetoDB("faishal")
-.then(()=>{
+.then((result)=>{
     console.log("first data saved");
+    console.log(result)
     return savetoDB("ahmed")
 })
-.then(()=>{
+.then((result)=>{
     console.log("second data saved");
+    console.log(result)
     return savetoDB("emon");
 })
-.then(()=>{
+.then((result)=>{
     console.log("third data saved.");
+    console.log(result);
 })
-.catch(()=>{
+.catch((error)=>{
     console.log("Promise was rejected.");
+    console.log(error);
 })
