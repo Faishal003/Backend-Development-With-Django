@@ -1,45 +1,34 @@
-//async await
+//fetch data
 
-// function getNum(){
-//     return new Promise((resolve, reject)=>{
-//         setTimeout(()=>{
-//             let num = Math.floor(Math.random() * 10) + 1;
-//             console.log(num);
-//             resolve();
-//         }, 1000);
-//     });
-// }
 
-// async function demo(){
-//     await getNum();
-//     await getNum();
-//     await getNum();
-//     await getNum();
-//     await getNum();
-//     await getNum();
-//     getNum();
-// }
+let url = "https://catfact.ninja/fact";
 
-//previous color change code
 
-let h1 = document.querySelector("h1"); 
+//get a readable steam
+// fetch(url) //return promise
+// .then((res)=>{
+//     console.log(res);
+// })
+// .catch((err)=>{
+//     console.log(`Error is: ${err}`);
+// })
 
-function changeColor(color, delay){
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            h1.style.color = color;
-            console.log(`Color changed to ${color}!`);
-            resolve("Color changed");
-        }, 1000);
-    });
-}
 
-async function demo(){
-    await changeColor("red", 1000);
-    await changeColor("green", 1000);
-    await changeColor("blue", 1000);
-    await changeColor("pink", 1000);
-    await changeColor("yellow", 1000);
-    await changeColor("purple", 1000);
-    changeColor("black", 1000);
-}
+//now can access the api data
+fetch(url) //return promise
+.then((res)=>{
+    return res.json();
+})
+.then((data)=>{
+    console.log("Data-01: ", data.fact);
+    return fetch(url);//if we again get any api response
+})
+.then((res)=>{
+    return res.json();
+})
+.then((data)=>{
+    console.log("Data-02: ", data.fact)
+})
+.catch((err)=>{
+    console.log(`Error is: ${err}`);
+})
