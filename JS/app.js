@@ -1,25 +1,15 @@
-//fetch data
+//sending heades with api requests
 
-let url = "https://dog.ceo/api/breeds/image/random";
+let url = "https://icanhazdadjoke.com/";
 
-let btn = document.querySelector("button");
-let img = document.querySelector("#result");
+async function getJokes(){
 
-btn.addEventListener('click', async ()=>{
-    let link = await getFacts();
-    console.log(link);
-    img.setAttribute("src", link);
-})
-
-
-//axios 
-async function getFacts(){
     try {
-        let res = await axios.get(url);
-        // console.log(res.data.fact);
-        return res.data.message;
+        let config = {headers: {Accept: "application/json"}};
+        let res = await axios.get(url, config);
+        console.log(res.data);
     } catch (error) {
-        console.log(`Error is: ${error}`);
-        return "No Image found";
+        console.log(`Error: ${error}`)
     }
+
 }
