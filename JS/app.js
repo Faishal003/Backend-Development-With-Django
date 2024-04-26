@@ -1,42 +1,45 @@
-function savetoDB(data){
+//async await
+
+// function getNum(){
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             let num = Math.floor(Math.random() * 10) + 1;
+//             console.log(num);
+//             resolve();
+//         }, 1000);
+//     });
+// }
+
+// async function demo(){
+//     await getNum();
+//     await getNum();
+//     await getNum();
+//     await getNum();
+//     await getNum();
+//     await getNum();
+//     getNum();
+// }
+
+//previous color change code
+
+let h1 = document.querySelector("h1"); 
+
+function changeColor(color, delay){
     return new Promise((resolve, reject)=>{
-        let internetSpeed = Math.floor(Math.random() * 10) + 1;
-        if(internetSpeed > 4){
-            resolve("Success: data saved successfully");
-        }else{
-            reject("Failure: Bad Network Connection");
-        }
+        setTimeout(()=>{
+            h1.style.color = color;
+            console.log(`Color changed to ${color}!`);
+            resolve("Color changed");
+        }, 1000);
     });
 }
 
-// let request = savetoDB("faishal");
-// request.then(()=>{
-//     console.log("Promise was resolved.");
-//     console.log(request);
-// })
-// .catch(()=>{
-//     console.log("Promise was rejected.");
-//     console.log(request);
-// })
-
-//same but more compact way should be
-
-savetoDB("faishal")
-.then((result)=>{
-    console.log("first data saved");
-    console.log(result)
-    return savetoDB("ahmed")
-})
-.then((result)=>{
-    console.log("second data saved");
-    console.log(result)
-    return savetoDB("emon");
-})
-.then((result)=>{
-    console.log("third data saved.");
-    console.log(result);
-})
-.catch((error)=>{
-    console.log("Promise was rejected.");
-    console.log(error);
-})
+async function demo(){
+    await changeColor("red", 1000);
+    await changeColor("green", 1000);
+    await changeColor("blue", 1000);
+    await changeColor("pink", 1000);
+    await changeColor("yellow", 1000);
+    await changeColor("purple", 1000);
+    changeColor("black", 1000);
+}
