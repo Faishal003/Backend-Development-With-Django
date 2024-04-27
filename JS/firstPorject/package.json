@@ -1,0 +1,17 @@
+{
+  "name": "firstporject",
+  "version": "1.0.0",
+  "description": "This is my first project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Md. Faishal Ahmed",
+  "license": "ISC",
+  "dependencies": {
+    "figlet": "^1.7.0",
+    "give-me-a-joke": "^0.5.1",
+    "install": "^0.13.0",
+    "npm": "^10.6.0"
+  }
+}
