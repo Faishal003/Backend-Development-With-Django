@@ -26,3 +26,11 @@ app.get("/:username/:id", (req, res)=>{
     let htmlStr = `<h1>hello @${username}. welcome to the homepage.</h1>`
     res.send(htmlStr);
 })
+
+app.get("/search", (req, res)=>{
+    let {q} = req.query;
+    if (!q){
+        res.send("please enter a valid search.");
+    }
+    res.send(`these are the search results for ${q}`);
+})
