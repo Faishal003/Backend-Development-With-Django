@@ -18,21 +18,11 @@ app.listen(port, ()=>{
 // })
 
 app.get('/', (req, res)=>{
-    res.send("You are in home page.")
+    res.send("You are in root path.")
 })
 
-app.get('/about', (req, res)=>{
-    res.send("You are in about page.")
-})
-
-app.get('/search', (req, res)=>{
-    res.send("You are in search page.")
-})
-
-app.get('*', (req, res)=>{
-    res.send("404 Bad request!!")
-})
-
-app.post('/', (req, res)=>{
-    res.send("You are in home page and request a post req")
+app.get("/:username/:id", (req, res)=>{
+    let {username, id} = req.params;
+    let htmlStr = `<h1>hello @${username}. welcome to the homepage.</h1>`
+    res.send(htmlStr);
 })
